@@ -88,3 +88,37 @@ class VipInfoViewSet(viewsets.ModelViewSet):
     serializer_class = VipInfoSerializer
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication] 
+
+
+#########加入購物車的view,理論上只要加驗證就好,基本CRUD應該都要可以執行.自己對自己購物車要能掌控全部
+from shopapp.models import ShoppingCart
+from shopapp.serializers import ShoppingCartSerializer
+class ShoppingCartViewSet(viewsets.ModelViewSet):
+    #下面這兩行就能調用ModelViewSet模組裡的CRUD,只是要針對客製化內容再覆寫
+    queryset = ShoppingCart.objects.all()
+    serializer_class = ShoppingCartSerializer
+    #加入驗證的部份
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication] 
+#########加入購物車的 ITEM　view
+from shopapp.models import CartItem
+from shopapp.serializers import CartItemSerializer
+class CartItemViewSet(viewsets.ModelViewSet):
+    #下面這兩行就能調用ModelViewSet模組裡的CRUD,只是要針對客製化內容再覆寫
+    queryset = CartItem.objects.all()
+    serializer_class = CartItemSerializer
+        #加入驗證的部份
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication] 
+
+
+#########加入購物車的 Total　view
+from shopapp.models import CartTotalPrice
+from shopapp.serializers import CartTotalPriceSerializer
+class CartTotalPriceViewSet(viewsets.ModelViewSet):
+    #下面這兩行就能調用ModelViewSet模組裡的CRUD,只是要針對客製化內容再覆寫
+    queryset = CartTotalPrice.objects.all()
+    serializer_class = CartTotalPriceSerializer
+        #加入驗證的部份
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]

@@ -17,3 +17,25 @@ class VipInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model=VipInfodata
         fields="__all__"
+
+###加入購物車及其項目,加總等三份資料解析
+from shopapp.models import ShoppingCart
+class ShoppingCartSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model=ShoppingCart
+        fields="__all__"
+
+from shopapp.models import CartItem
+class CartItemSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model=CartItem
+        fields="__all__"
+
+from shopapp.models import CartTotalPrice
+class CartTotalPriceSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model=CartTotalPrice
+        fields="__all__"

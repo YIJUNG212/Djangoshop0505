@@ -10,6 +10,12 @@ from shopapp.views import UserViewSet,VipInfoViewSet#要調用視圖
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'vip', VipInfoViewSet)
+#####把購物車也註冊進來
+from shopapp.views import ShoppingCartViewSet,CartItemViewSet,CartTotalPriceViewSet#要調用視圖
+router.register(r'shopcar', ShoppingCartViewSet)
+router.register(r'caritem', CartItemViewSet)
+router.register(r'cartotal', CartTotalPriceViewSet)
+
 
 
 # Wire up our API using automatic URL routing.
