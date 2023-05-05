@@ -1,0 +1,4 @@
+# Djangoshop0505 
+結訓前的專題,為了實作Android 可以連到由Django生成的restful API接口,於是自己上官網爬了中心沒教的restframework及simple-jwt的資料,並實作。
+已經可以透過postman測試對各資料表用refreshtoken方式來構連，但前端網頁的部份,不會特別寫.那是另一個同學負責的部份。
+目前的Django只是為了讓主攻的Android能有測試的環境
